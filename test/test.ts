@@ -749,7 +749,6 @@ describe('Matrix tests', () => {
         it('number', async () => {
           const tokenizer = await tokenizerType.loadTokenizer('test3.dat');
           assert.isDefined(tokenizer.fileInfo, 'tokenizer.fileInfo');
-          // @ts-ignore
           await tokenizer.ignore(1);
           const x = await tokenizer.peekNumber(Token.INT32_BE);
           assert.strictEqual(x, 33752069);
@@ -762,7 +761,6 @@ describe('Matrix tests', () => {
           if (tokenizerType.hasFileInfo) {
             assert.isDefined(tokenizer.fileInfo, 'tokenizer.fileInfo');
           }
-          // @ts-ignore
           await tokenizer.ignore(2);
           try {
             await tokenizer.peekNumber(Token.INT32_BE);
