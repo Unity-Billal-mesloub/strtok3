@@ -101,13 +101,13 @@ export function stringToReadableStream(inputString: string, forceDefault: boolea
   const stream = stringReadableStream(inputString, delay);
   const _getReader = stream.getReader.bind(stream);
 
-  // @ts-ignore
+  // @ts-expect-error
   stream.getReader = (options?: { mode?: string }) => {
     if (forceDefault) {
       // Force returning the default reader
       return _getReader(); // Call without options for a default reader
     }
-    // @ts-ignore
+    // @ts-expect-error
     return _getReader(options); // Pass through other options
   };
 

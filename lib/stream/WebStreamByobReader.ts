@@ -16,7 +16,7 @@ export class WebStreamByobReader extends WebStreamReader {
 
     if (buffer.length === 0) return 0;
 
-    // @ts-ignore
+    // @ts-expect-error
     const result = await this.reader.read(new Uint8Array(buffer.length), {min: mayBeLess ? undefined : buffer.length});
 
     if (result.done) {
