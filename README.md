@@ -1,5 +1,5 @@
-[![Node.js CI](https://github.com/Borewit/strtok3/actions/workflows/ci.yml/badge.svg)](https://github.com/Borewit/strtok3/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/Borewit/strtok3/actions/workflows/codeql.yml/badge.svg?branch=master)](https://github.com/Borewit/strtok3/actions/workflows/codeql.yml)
+[![Node.js CI](https://github.com/Unity-Billal-mesloub/strtok3/actions/workflows/ci.yml/badge.svg)](https://github.com/Unity-Billal-mesloub/strtok3/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/Unity-Billal-mesloub/strtok3/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/Unity-Billal-mesloub/strtok3/actions/workflows/codeql.yml)
 [![NPM version](https://badge.fury.io/js/strtok3.svg)](https://npmjs.org/package/strtok3)
 [![npm downloads](http://img.shields.io/npm/dm/strtok3.svg)](https://npmcharts.com/compare/strtok3,token-types?start=1200&interval=30)
 [![DeepScan grade](https://deepscan.io/api/teams/5165/projects/8526/branches/103329/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5165&pid=8526&bid=103329)
@@ -13,7 +13,7 @@ The `strtok3` module provides several methods for creating a [*tokenizer*](#toke
 Designed for:
 * Seamless support in streaming environments.
 * Efficiently decode binary data, strings, and numbers.
-* Reading [predefined](https://github.com/Borewit/token-types) or custom tokens.
+* Reading [predefined](https://github.com/Unity-Billal-mesloub/token-types) or custom tokens.
 * Offering [*tokenizers*](#tokenizer-object) for reading from [files](#method-strtok3fromfile), [streams](#fromstream-function) or [Uint8Arrays](#frombuffer-function).
 
 ### Features
@@ -21,8 +21,8 @@ Designed for:
 * Files, using a file path as input.
 * Node.js [streams](https://nodejs.org/api/stream.html).
 * [Buffer](https://nodejs.org/api/buffer.html) or [Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array).
-* HTTP chunked transfer provided by [@tokenizer/http](https://github.com/Borewit/tokenizer-http).
-* [Amazon S3](https://aws.amazon.com/s3) chunks with [@tokenizer/s3](https://github.com/Borewit/tokenizer-s3).
+* HTTP chunked transfer provided by [@tokenizer-http](https://github.com/Unity-Billal-mesloub/tokenizer-http).
+* [Amazon S3](https://aws.amazon.com/s3) chunks with [@tokenizer-s3](https://github.com/Unity-Billal-mesloub/tokenizer-s3).
 
 ## Installation
 
@@ -32,12 +32,12 @@ npm install strtok3
 
 ### Compatibility
 
-Starting with version 7, the module has migrated from [CommonJS](https://en.wikipedia.org/wiki/CommonJS) to [pure ECMAScript Module (ESM)](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
+Starting with version 7, the module has migrated from [CommonJS](https://en.wikipedia.org/wiki/CommonJS) to [pure ECMAScript Module (ESM)](https://gist.github.com/Unity-Billal-mesloub/b4e72755bc392b155926e1724e0b9087).
 The distributed JavaScript codebase is compliant with the [ECMAScript 2020 (11th Edition)](https://en.wikipedia.org/wiki/ECMAScript_version_history#11th_Edition_%E2%80%93_ECMAScript_2020) standard.
 
 Requires a modern browser, Node.js (V8) ≥ 18 engine or Bun (JavaScriptCore) ≥ 1.2.
 
-For TypeScript CommonJs backward compatibility, you can use [load-esm](https://github.com/Borewit/load-esm).
+For TypeScript CommonJs backward compatibility, you can use [load-esm](https://github.com/Unity-Billal-mesloub/load-esm).
 
 > [!NOTE]
 > This module requires a [Node.js ≥ 16](https://nodejs.org/en/about/previous-releases) engine.
@@ -46,7 +46,7 @@ For TypeScript CommonJs backward compatibility, you can use [load-esm](https://g
 ## Support the Project
 If you find this project useful and would like to support its development, consider sponsoring or contributing:
 
-- [Become a sponsor to Borewit](https://github.com/sponsors/Borewit)
+- [Become a sponsor to Borewit](https://github.com/sponsors/Unity-Billal-mesloub)
 
 - Buy me a coffee:
 
@@ -201,7 +201,7 @@ parse();
 
 ### `Tokenizer` object
 The *tokenizer* is an abstraction of a [stream](https://nodejs.org/api/stream.html), file or [Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array), allowing _reading_ or _peeking_ from the stream.
-It can also be translated in chunked reads, as done in [@tokenizer/http](https://github.com/Borewit/tokenizer-http);
+It can also be translated in chunked reads, as done in [@tokenizer/http](https://github.com/Unity-Billal-mesloub/tokenizer-http);
 
 #### Key Features:
 
@@ -350,7 +350,7 @@ Provides optional metadata about the file being tokenized.
 ### `Token` object
 
 The *token* is basically a description of what to read from the [*tokenizer-stream*](#tokenizer-object).
-A basic set of *token types* can be found here: [*token-types*](https://github.com/Borewit/token-types).
+A basic set of *token types* can be found here: [*token-types*](https://github.com/Unity-Billal-mesloub/token-types).
 
 A token is something which implements the following interface:
 ```ts
@@ -373,7 +373,7 @@ The *tokenizer* reads `token.len` bytes from the *tokenizer-stream* into a Buffe
 The `token.get` will be called with the Buffer. `token.get` is responsible for conversion from the buffer to the desired output type.
 
 ### Working with Web-API readable stream
-To convert a [Web-API readable stream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader) into a [Node.js readable stream]((https://nodejs.org/api/stream.html#stream_readable_streams)), you can use [readable-web-to-node-stream](https://github.com/Borewit/readable-web-to-node-stream) to convert one in another.
+To convert a [Web-API readable stream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader) into a [Node.js readable stream]((https://nodejs.org/api/stream.html#stream_readable_streams)), you can use [readable-web-to-node-stream](https://github.com/Unity-Billal-mesloub/readable-web-to-node-stream) to convert one in another.
 
 ```js
 import { fromWebStream } from 'strtok3';
@@ -392,8 +392,5 @@ import { ReadableWebToNodeStream } from 'readable-web-to-node-stream';
 ## Dependencies
 
 Dependencies:
-- [@tokenizer/token](https://github.com/Borewit/tokenizer-token): Provides token definitions and utilities used by `strtok3` for interpreting binary data.
+- [@tokenizer/token](https://github.com/Unity-Billal-mesloub/tokenizer-token): Provides token definitions and utilities used by `strtok3` for interpreting binary data.
 
-## Licence
-
-This project is licensed under the [MIT License](LICENSE.txt). Feel free to use, modify, and distribute as needed.
